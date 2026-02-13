@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-box">
+  <h2>Enter Password 💗</h2>
+  <input type="password" id="password" placeholder="Password">
+  <br>
+  <button onclick="checkPassword()">Login</button>
+</div>
+
+<script>
+function checkPassword() {
+  const pass = document.getElementById("password").value;
+  if(pass === "14/6") {  // غير الباسورد هنا
+    window.location.href = "letter.html";
+  } else {
+    alert("Wrong Password 💔");
+  }
+}
+
+/* Create Hearts */
+for(let i=0; i<20; i++){
+  let heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+  document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>

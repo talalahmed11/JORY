@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>My Letter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="letter-box">
+  <div class="letter-text" id="text"></div>
+</div>
+
+<script>
+
+const message = `sguishguiosdguiasguhasduoghasdhguosdhgiohasdioghsdioghasdiohgiosd
+gdgdasgjkbsejkgbsdjkbgsdjkbgklsdjbgklsdbgjlsdbgjlbsdklgbsdklbgsdklg
+gksadklgsldgskldgnklsjgpoisdjpgodjgo[jogjspighiashg;ksladgjioseyghsjgosej
+fhioaiogahsgiohsdioghasioghiksdhfioasgiojgpohioserhfgsdgvhlkefhbikledfhgkl;djfhgl'jel;gjwerl;jkg;l
+dhgkhsdjkfghsejklfhsjklhfjklsdhfjklhuiehiofuhweiorfhwioehfiohiofhwer
+ufguifguisghfuigeuifgweiufg
+ufguiweguiegfuiwegfuwegfuiwegiufhweuifhweuifhuwefhuwihfwuie
+fwejhfuihfuiwhefuiheuihwefuiheuifhuiwhfuiwehfuiehfuiwehuiheuifhweui]`;
+
+let i = 0;
+function typeWriter() {
+  if (i < message.length) {
+    document.getElementById("text").innerHTML += message.charAt(i);
+    i++;
+    setTimeout(typeWriter, 40);
+  }
+}
+
+typeWriter();
+
+/* Hearts Background */
+for(let i=0; i<20; i++){
+  let heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+  document.body.appendChild(heart);
+}
+
+</script>
+
+</body>
+</html>
