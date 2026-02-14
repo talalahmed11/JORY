@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title>Login</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div class="hearts"></div>
 
 <div class="login-box">
   <h2>Enter Password 💗</h2>
   <input type="password" id="password" placeholder="Password">
-  <br>
   <button onclick="checkPassword()">Login</button>
 </div>
 
 <script>
 function checkPassword() {
   const pass = document.getElementById("password").value;
-  if(pass === "14/6") {  // غير الباسورد هنا
+  if(pass === "14/6") {
     window.location.href = "letter.html";
   } else {
     alert("Wrong Password 💔");
   }
 }
 
-/* Create Hearts */
-for(let i=0; i<20; i++){
+/* Generate Hearts */
+const heartsContainer = document.querySelector(".hearts");
+
+for(let i=0; i<25; i++){
   let heart = document.createElement("div");
   heart.classList.add("heart");
   heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
-  document.body.appendChild(heart);
+  heart.style.animationDuration = (Math.random() * 4 + 6) + "s";
+  heart.style.animationDelay = Math.random() * 5 + "s";
+  heartsContainer.appendChild(heart);
 }
 </script>
 

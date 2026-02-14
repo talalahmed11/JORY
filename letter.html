@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title>My Letter</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Letter</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div class="hearts"></div>
 
 <div class="letter-box">
   <div class="letter-text" id="text"></div>
 </div>
 
 <script>
-
-const message = `sguishguiosdguiasguhasduoghasdhguosdhgiohasdioghsdioghasdiohgiosd
-gdgdasgjkbsejkgbsdjkbgsdjkbgklsdjbgklsdbgjlsdbgjlbsdklgbsdklbgsdklg
-gksadklgsldgskldgnklsjgpoisdjpgodjgo[jogjspighiashg;ksladgjioseyghsjgosej
-fhioaiogahsgiohsdioghasioghiksdhfioasgiojgpohioserhfgsdgvhlkefhbikledfhgkl;djfhgl'jel;gjwerl;jkg;l
-dhgkhsdjkfghsejklfhsjklhfjklsdhfjklhuiehiofuhweiorfhwioehfiohiofhwer
-ufguifguisghfuigeuifgweiufg
-ufguiweguiegfuiwegfuwegfuiwegiufhweuifhweuifhuwefhuwihfwuie
-fwejhfuihfuiwhefuiheuihwefuiheuifhuiwhfuiwehfuiehfuiwehuiheuifhweui]`;
+const message = `GHSDFIGODFHGOSDFHGIODHGIODFHGIODFHGIODHGIODHGIODFG
+GKDFGHDFIOHGIODFGJPIODGPIODJGPOGJPOERG
+DSJGPSJGPIDHGPOSHGISJPOSDPOHGPSUPIASJGIOHIOTGH
+GGIOSDPFIGJSDPOGHPOJGPODJGPODJGPJJGIOJPOJPGJDPOGJR
+GGJPODFJGIDJGPOJGPIDRGNGDPI
+OFJGPODJPGOJDFGOJDFPGOJ
+GOJGPJDFPGOJDFPGJ
+DJVHDIGHDIOJGOSDIOGPOSDIGDRD
+JSPIDJFIOTFSD;LGFHFFIOFSDL`;
 
 let i = 0;
 function typeWriter() {
   if (i < message.length) {
     document.getElementById("text").innerHTML += message.charAt(i);
     i++;
-    setTimeout(typeWriter, 40);
+    setTimeout(typeWriter, 35);
   }
 }
-
 typeWriter();
 
-/* Hearts Background */
-for(let i=0; i<20; i++){
+/* Generate Hearts */
+const heartsContainer = document.querySelector(".hearts");
+
+for(let i=0; i<25; i++){
   let heart = document.createElement("div");
   heart.classList.add("heart");
   heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
-  document.body.appendChild(heart);
+  heart.style.animationDuration = (Math.random() * 4 + 6) + "s";
+  heart.style.animationDelay = Math.random() * 5 + "s";
+  heartsContainer.appendChild(heart);
 }
-
 </script>
 
 </body>
